@@ -26,7 +26,7 @@ resource "aws_subnet" "public_subnets" {
   map_public_ip_on_launch = "true"
 
   tags = {
-    name = "${var.vpc_name}_${each.key + 1}"
+    name = "${var.vpc_name}_${each.key}"
     environment = var.environment
     Terraform = true
   }
@@ -41,7 +41,7 @@ resource "aws_subnet" "private_subnets" {
   map_public_ip_on_launch = true
 
   tags = {
-    name = "${var.vpc_name}_${each.key + 1}"
+    name = "${var.vpc_name}_${each.key}"
     environment = var.environment
     Terraform = true
   }
