@@ -35,7 +35,7 @@ ingress {
 resource "aws_instance" "jenkins" {
   instance_type = var.jenkins_ec2_type
   ami = var.jenkins_ec2_ami
-  subnet_id = aws_subnet.public_subnets["Ben_prod_public-2"].id
+  subnet_id = aws_subnet.public_subnets.id
   vpc_security_group_ids = [ "${aws_security_group.jenkins_security_group.id}" ]
   key_name = var.key_pair
   user_data = file("${path.module}/${var.user_data}")
