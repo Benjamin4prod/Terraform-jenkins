@@ -1,4 +1,4 @@
-resource "aws_iam_role" "Jenkins_s3_role" {
+resource "aws_iam_role" "jenkins_s3_role" {
     name = var.iam_role_name
     assume_role_policy = <<EOF
 {
