@@ -1,7 +1,4 @@
-output "public_subnets" {
-  description = "id of public subnets"
-  value = aws_subnet.public_subnets[each.key].id
-}
+
 output "VPC_id" {
     description = "id of project vpc"
     value = aws_vpc.vpc.id
