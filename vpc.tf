@@ -1,5 +1,14 @@
 #retrieve azs
-data "aws_availability_zone" "Avaialable" {}
+
+data "aws_availability_zone" "Available" {
+  state           = "available"
+  region          = data.aws_region.current.name
+  filter {
+    name   = "opt-in-status"
+    values = ["opt-in-not-required"]
+  }
+}
+
 data "aws_region" "current" {}
 
 resource "aws_vpc" "vpc" {

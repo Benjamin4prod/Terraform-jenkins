@@ -31,7 +31,7 @@ variable "environment" {
 }
 variable "all_ipv4" {
   type = string
-  default = "0.0.0.0.0"
+  default = "0.0.0.0.0/0"
 }
 variable "private_subnets" {
   default = {
