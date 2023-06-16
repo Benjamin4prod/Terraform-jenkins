@@ -36,7 +36,7 @@ resource "aws_instance" "jenkins" {
   instance_type = var.jenkins_ec2_type
   ami = var.jenkins_ec2_ami
   subnet_id = aws_subnet.public_subnets["public_1"].id
-  security_group_ids = aws_security_group.jenkins_security_group.id
+  vpc_security_group_ids = [ "${aws_security_group.jenkins_security_group.id}" ]
   key_name = var.key_pair
   user_data = file("${path.module}/${var.user_data}")
   iam_instance_profile = aws_iam_instance_profile.jenkins_s3_instance_profile.name
