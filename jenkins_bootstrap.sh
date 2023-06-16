@@ -3,12 +3,12 @@
 
 dependencies
 sudo yum update
-sudo yum install zip unzip
+sudo yum install zip unzip -y
 
 
 #install jenkins
 
-sudo yum install -y openjdk-11-jre 
+sudo yum install openjdk-11-jre -y
 
 
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
