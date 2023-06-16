@@ -1,8 +1,6 @@
 
 resource "aws_s3_bucket" "s3_bucket" {
     bucket = "${var.s3_bucket_name}-2023"
-    acl    = "private"
-
     tags = {
         name = "{${var.s3_bucket_name}}"
         environment = var.environment
@@ -16,4 +14,9 @@ resource "aws_s3_bucket_versioning" "bucket_versioning" {
   versioning_configuration {
     status = "Enabled"
   }
+}
+
+resource "aws_s3_bucket_acl" "bucket_acl" {
+  bucket = aws_s3_bucket.s3_bucket.bucket
+  acl    = "private"
 }

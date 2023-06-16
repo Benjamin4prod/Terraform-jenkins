@@ -1,12 +1,7 @@
 #retrieve azs
 
-data "aws_availability_zone" "Available" {
-  state           = "available"
-  region          = data.aws_region.current.name
-  filter {
-    name   = "opt-in-status"
-    values = ["opt-in-not-required"]
-  }
+data "aws_availability_zone" "available" {
+  state           = "available"  
 }
 
 data "aws_region" "current" {}
@@ -26,7 +21,7 @@ resource "aws_subnet" "public_subnets" {
   vpc_id = aws_vpc.vpc.id
   for_each = var.public_subnets
   cidr_block = cidrsubnet(var.vpc_cidr, 8, each.value+15)
-  availability_zone = tolist(data.aws_availability_zone.Avaialable.name)[each.value]
+  availability_zone = tolist(data.aws_availability_zone.avaialable.name)[each.value]
 
   map_public_ip_on_launch = var.all_ipv4
 
