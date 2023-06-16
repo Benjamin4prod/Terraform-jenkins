@@ -37,7 +37,7 @@ EOF
 
 
 resource "aws_iam_policy_attachment" "jenkins_s3_policy" {
-  name = aws_iam_role.Jenkins_s3_role.name
+  name = aws_iam_role.jenkins_s3_role.name
   policy_arn = aws_iam_policy.jenkins_s3_policy.arn
 
 }
