@@ -30,7 +30,7 @@ variable "environment" {
   default = "prod"
 }
 variable "all_ipv4" {
-  type = STRING
+  type = string
   default = "0.0.0.0/0"
 }
 variable "private_subnets" {
