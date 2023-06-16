@@ -1,6 +1,6 @@
 output "VPC_id" {
     description = "id of project vpc"
-    value = aws_vpc.id
+    value = aws_vpc.vpc.id
 }
 
 output "jenkins_ec2_public_ip" {

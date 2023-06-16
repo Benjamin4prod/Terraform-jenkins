@@ -55,18 +55,18 @@ variable "ssh_location" {
   default = "YOUR_PUBLIC_IPV4_ADRESS/32"
 }
 
-variable "Jenkins_ec2_name" {
+variable "jenkins_ec2_name" {
   type = string
   description = "Name of jenkins server"
   default = "Jenkins_server"
 }
 
-variable "Jenkins_ec2_ami" {
+variable "jenkins_ec2_ami" {
   type = string
   description = "Jenkins server ami"
 }
 
-variable "Jenkins_ec2_type" {
+variable "jenkins_ec2_type" {
   type = string
   description = "Ec2 instance type for jenkins server"
   default = "t3.micro"
