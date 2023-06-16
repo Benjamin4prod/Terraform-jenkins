@@ -1,9 +1,6 @@
-resource "random_id" "s3_random_name" {
-  byte_length = 5
-}
 
 resource "aws_s3_bucket" "s3_bucket" {
-    bucket = "${var.s3-name}-${random_id.randomize.hex}"
+    bucket = "${var.s3-name}-2023"
     acl    = "private"
 
     versioning {
@@ -11,7 +8,7 @@ resource "aws_s3_bucket" "s3_bucket" {
      }
 
     tags = {
-        name = "{${var.s3_bucket}-${random_id.randomize.hex}}"
+        name = "{${var.s3_bucket}}"
         environment = var.environment
         terraform = "true"
 
