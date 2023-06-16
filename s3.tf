@@ -3,7 +3,6 @@ resource "random_id" "s3_random_name" {
 }
 
 resource "aws_s3_bucket" "s3_bucket" {
-    count = 2
     bucket = "${var.s3-name}-${random_id.randomize.hex}"
     acl    = "private"
 
@@ -12,7 +11,7 @@ resource "aws_s3_bucket" "s3_bucket" {
      }
 
     tags = {
-     name = {${var.s3_bucket}-${random_id.randomize.hex}}
+        name = "{${var.s3_bucket}-${random_id.randomize.hex}}"
         environment = var.environment
         terraform = "true"
 
