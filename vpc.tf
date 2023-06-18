@@ -15,13 +15,12 @@ resource "aws_vpc" "vpc" {
     Terraform   = "true"
   }
 }
-
 resource "aws_subnet" "public_subnets" {
   vpc_id            = aws_vpc.vpc.id
+  cidr_block        = var.public_subnet_cidr_blocks
+  availability_zone = var.availability_zone
   count             = length(var.public_subnets)
-  cidr_block        = cidrsubnet(var.vpc_cidr, 8, count.index + 15)
-  availability_zone = data.aws_availability_zones.available.names[count.index]
-
+  
   map_public_ip_on_launch = true
 
   tags = {
