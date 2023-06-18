@@ -3,7 +3,7 @@
  # type = string
   #description = "name of s3bucket"]
   
-}
+#}
 #---------------------------------------------
 #vpc vars
 
