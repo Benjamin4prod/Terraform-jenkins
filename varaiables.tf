@@ -1,8 +1,8 @@
 #s3 vars
-variable "s3_bucket_name" {
-  type = string
-  description = "name of s3bucket"]
-  default = "my-terr"
+#variable "s3_bucket_name" {
+ # type = string
+  #description = "name of s3bucket"]
+  
 }
 #---------------------------------------------
 #vpc vars
