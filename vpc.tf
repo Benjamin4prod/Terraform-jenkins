@@ -69,8 +69,8 @@ resource "aws_default_route_table" "public_route_table" {
 }
 
 resource "aws_route_table_association" "route_table_attachment" {
+  for_each = zipmap(keys(aws_subnet.public_subnets), aws_subnet.public_subnets)
   depends_on      = [aws_subnet.public_subnets]
   route_table_id  = aws_default_route_table.public_route_table.id
-  for_each        = aws_subnet.public_subnets
   subnet_id       = each.value.id
 }
