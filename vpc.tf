@@ -72,6 +72,6 @@ resource "aws_route_table_association" "route_table_attachment" {
   depends_on = [ aws_subnet.public_subnets ]
   count = length(aws_subnet.public_subnets)
   subnet_id      = aws_subnet.public_subnets[count.index].id
-  route_table_id = aws_default_route_table.public_route_table
+  route_table_id = aws_route_table.public_route_table.id
   
 }
